@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Pihapalvelut</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .card p {
+      padding: 0 10px;
+    }
+
+    .card button {
+      margin: 15px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .card button:hover {
+      background-color: #1b5e20;
+    }
+
+    footer {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Pihapalvelut</h1>
+  <p>Luotettavaa apua pihaasi ympäri vuoden</p>
+</header>
+
+<section>
+  <h2>Palvelumme</h2>
+
+  <div class="services">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1598514982846-5d1f0b5f4b1d" alt="Ruohonleikkuu">
+      <h3>Ruohonleikkuu</h3>
+      <p>Pidämme nurmikkosi siistinä koko kesän.</p>
+      <button onclick="alert('Varaus lähetetty!')">Varaa aika</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1608889175234-7c9f1c7a9ff4" alt="Lumenkolaus">
+      <h3>Lumenkolaus</h3>
+      <p>Poistamme lumet nopeasti ja tehokkaasti.</p>
+      <button onclick="alert('Varaus lähetetty!')">Varaa aika</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" alt="Lehtien haravointi">
+      <h3>Lehtien haravointi</h3>
+      <p>Syksyn lehdet pois pihaltasi vaivatta.</p>
+      <button onclick="alert('Varaus lähetetty!')">Varaa aika</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="Ikkunanpesu">
+      <h3>Ikkunanpesu</h3>
+      <p>Kirkkaat ikkunat kotiin tai mökille.</p>
+      <button onclick="alert('Varaus lähetetty!')">Varaa aika</button>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Pihapalvelut</p>
+</footer>
+
+</body>
+</html>
