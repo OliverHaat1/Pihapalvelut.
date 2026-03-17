@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Pihapalvelut</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1b5e20;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Pihapalvelut</h1>
+  <p>Luotettavaa apua pihaasi ympäri vuoden</p>
+</header>
+
+<section>
+  <h2>Palvelumme</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Ruohonleikkuu</h3>
+      <p>Pidämme nurmikkosi siistinä koko kesän.</p>
+    </div>
+    <div class="card">
+      <h3>Lumenkolaus</h3>
+      <p>Poistamme lumet nopeasti ja tehokkaasti.</p>
+    </div>
+    <div class="card">
+      <h3>Lehtien haravointi</h3>
+      <p>Syksyn lehdet pois pihaltasi vaivatta.</p>
+    </div>
+    <div class="card">
+      <h3>Ikkunanpesu</h3>
+      <p>Kirkkaat ikkunat kotiin tai mökille.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Ota yhteyttä</h2>
+  <p>Puhelin: 040 123 4567</p>
+  <p>Sähköposti: info@pihapalvelut.fi</p>
+  <button onclick="alert('Kiitos yhteydenotosta!')">Tilaa palvelu</button>
+</section>
+
+<footer>
+  <p>© 2026 Pihapalvelut</p>
+</footer>
+
+</body>
+</html>
