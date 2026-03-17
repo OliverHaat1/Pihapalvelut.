@@ -70,6 +70,49 @@
       padding: 10px;
       margin-top: 20px;
     }
+
+    /* Modal-tyylit */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: white;
+      margin: 50px auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-content iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .close-btn:hover {
+      background: #1b5e20;
+    }
   </style>
 </head>
 <body>
@@ -81,49 +124,74 @@
 
 <section>
   <h2>Palvelumme</h2>
-
   <div class="services">
 
     <div class="card">
       <img src="pexels-magda-ehlers-pexels-4162016.jpg" alt="Ruohonleikkuu">
       <h3>Ruohonleikkuu</h3>
       <p>Pidämme nurmikkosi siistinä koko kesän.</p>
-      <button onclick="alert('Varaus lähetetty!')">Varaa aika</button>
+      <button onclick="avaaModal('ruohonleikkuu')">Varaa aika</button>
     </div>
 
     <div class="card">
       <img src="LT_PKS_lumity_t_1920x1080px.jpg" alt="Lumenkolaus">
       <h3>Lumenkolaus</h3>
       <p>Poistamme lumet nopeasti ja tehokkaasti.</p>
-      <button onclick="alert('Varaus lähetetty!')">Varaa aika</button>
+      <button onclick="avaaModal('lumenkolaus')">Varaa aika</button>
     </div>
 
     <div class="card">
       <img src="fall-leaves-with-rake_ts_157256122-main.jpg" alt="Lehtien haravointi">
       <h3>Lehtien haravointi</h3>
       <p>Syksyn lehdet pois pihaltasi vaivatta.</p>
-      <button onclick="alert('Varaus lähetetty!')">Varaa aika</button>
+      <button onclick="avaaModal('lehtienharavointi')">Varaa aika</button>
     </div>
 
     <div class="card">
       <img src="images.jpg" alt="Ikkunanpesu">
       <h3>Ikkunanpesu</h3>
       <p>Kirkkaat ikkunat kotiin tai mökille.</p>
-      <button onclick="alert('Varaus lähetetty!')">Varaa aika</button>
+      <button onclick="avaaModal('ikkunanpesu')">Varaa aika</button>
     </div>
 
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Pihapalvelut</p>
-</footer>
-
-</body>
-</html>
-
-<footer>
   <h2>Yhteystiedot</h2>
   <p>Sähköposti: <a href="mailto:sinun.sposti@example.com">sinun.sposti@example.com</a></p>
   <p>Puhelin: <a href="tel:+358401234567">+358 40 123 4567</a></p>
+  <p>© 2026 Pihapalvelut</p>
 </footer>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="suljeModal()">Sulje</button>
+    <h3 id="modal-title"></h3>
+    <iframe id="kalenteri"></iframe>
+  </div>
+</div>
+
+<script>
+  const kalenterit = {
+    'ruohonleikkuu': { title: 'Ruohonleikkuu', url: 'https://calendly.com/esimerkki/ruohonleikkuu' },
+    'lumenkolaus': { title: 'Lumenkolaus', url: 'https://calendly.com/esimerkki/lumenkolaus' },
+    'lehtienharavointi': { title: 'Lehtien haravointi', url: 'https://calendly.com/esimerkki/lehtienharavointi' },
+    'ikkunanpesu': { title: 'Ikkunanpesu', url: 'https://calendly.com/esimerkki/ikkunanpesu' }
+  };
+
+  function avaaModal(palvelu) {
+    document.getElementById('modal-title').innerText = kalenterit[palvelu].title;
+    document.getElementById('kalenteri').src = kalenterit[palvelu].url;
+    document.getElementById('modal').style.display = 'block';
+  }
+
+  function suljeModal() {
+    document.getElementById('modal').style.display = 'none';
+    document.getElementById('kalenteri').src = ''; // Tyhjennä iframe suljettaessa
+  }
+</script>
+
+</body>
+</html>
